@@ -1,6 +1,6 @@
 ## zhinao_openai
 
-**Author:** zhangruitao
+**Author:** Tory31
 **Version:** 0.0.1
 **Type:** model
 

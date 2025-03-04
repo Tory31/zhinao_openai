@@ -1,4 +1,5 @@
 provider: zhinao_openai
+author: Tory31
 label:
   en_US: zhinao_openai
 description:
