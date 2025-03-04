@@ -1,0 +1,33 @@
+version: 0.0.1
+type: plugin
+author: zhangruitao
+name: zhinao_openai
+label:
+  en_US: zhinao_openai
+  ja_JP: zhinao_openai
+  zh_Hans: zhinao_openai
+  pt_BR: zhinao_openai
+description:
+  en_US: zhinao openai
+  ja_JP: zhinao openai
+  zh_Hans: zhinao openai
+  pt_BR: zhinao openai
+icon: icon.svg
+resource:
+  memory: 268435456
+  permission: {}
+plugins:
+  models:
+    - provider/zhinao_openai.yaml
+meta:
+  version: 0.0.1
+  arch:
+    - amd64
+    - arm64
+  runner:
+    language: python
+    version: "3.12"
+    entrypoint: main
+created_at: 2025-03-03T18:54:20.9839118+08:00
+privacy: PRIVACY.md
+verified: false
