@@ -109,7 +109,7 @@ class ZhinaoOpenAITextEmbeddingModel(_CommonOpenAI, TextEmbeddingModel):
 
         return TextEmbeddingResult(embeddings=embeddings, usage=usage, model=model)
 
-    def get_num_tokens(self, model: str, credentials: dict, texts: list[str]) -> int:
+    def get_num_tokens(self, model: str, credentials: dict, texts: list[str]) -> list[int]:
         """
         Get number of tokens for given prompt messages
 
@@ -127,12 +127,14 @@ class ZhinaoOpenAITextEmbeddingModel(_CommonOpenAI, TextEmbeddingModel):
             enc = tiktoken.get_encoding("cl100k_base")
 
         total_num_tokens = 0
+        all_tokens = []
         for text in texts:
             # calculate the number of tokens in the encoded text
             tokenized_text = enc.encode(text)
             total_num_tokens += len(tokenized_text)
+            all_tokens.append(len(tokenized_text))
 
-        return total_num_tokens
+        return all_tokens
 
     def validate_credentials(self, model: str, credentials: dict) -> None:
         """
